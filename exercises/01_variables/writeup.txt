@@ -1,7 +1,11 @@
 Erreur(s) :
-
+error: missing type for `const` item
+ --> exercises/01_variables/variables6.rs:8:13
+  |
+8 | const NUMBER = 3;
 
 Explication de l'erreur / des erreurs :
-
+le type de variable n'est pas donné. Nous devons donc le déclarer
 
 résolution de l'erreur / des erreurs :
+nous changeons la ligne par const NUMBER: i32 = 3;

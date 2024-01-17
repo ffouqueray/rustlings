@@ -1,7 +1,44 @@
 Erreur(s) :
+error[E0599]: no variant or associated item named `ChangeColor` found for enum `Message` in the current scope
+  --> exercises/08_enums/enums3.rs:63:32
+   |
+10 | enum Message {
+   | ------------ variant or associated item `ChangeColor` not found for this enum
+...
+63 |         state.process(Message::ChangeColor(255, 0, 255));
+   |                                ^^^^^^^^^^^ variant or associated item not found in `Message`
 
+error[E0599]: no variant or associated item named `Echo` found for enum `Message` in the current scope
+  --> exercises/08_enums/enums3.rs:64:32
+   |
+10 | enum Message {
+   | ------------ variant or associated item `Echo` not found for this enum
+...
+64 |         state.process(Message::Echo(String::from("Hello world!")));
+   |                                ^^^^ variant or associated item not found in `Message`
+
+error[E0599]: no variant or associated item named `Move` found for enum `Message` in the current scope
+  --> exercises/08_enums/enums3.rs:65:32
+   |
+10 | enum Message {
+   | ------------ variant or associated item `Move` not found for this enum
+...
+65 |         state.process(Message::Move(Point { x: 10, y: 15 }));
+   |                                ^^^^ variant or associated item not found in `Message`
+
+error[E0599]: no variant or associated item named `Quit` found for enum `Message` in the current scope
+  --> exercises/08_enums/enums3.rs:66:32
+   |
+10 | enum Message {
+   | ------------ variant or associated item `Quit` not found for this enum
+...
+66 |         state.process(Message::Quit);
+   |                                ^^^^ variant or associated item not found in `Message`
+
+En gros : message a pas été entré
 
 Explication de l'erreur / des erreurs :
 
 
 résolution de l'erreur / des erreurs :
+J'ai rempli les champs de enum Message par ceux nécessaires, et ajouté les champs nécessaires à la fonction process de la structure State

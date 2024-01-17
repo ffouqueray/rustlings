@@ -1,7 +1,19 @@
 Erreur(s) :
+error: expected expression, found `?`
+  --> exercises/05_vecs/vecs2.rs:16:9
+   |
+16 |         ???
+   |         ^ expected expression
 
+error: expected expression, found `?`
+  --> exercises/05_vecs/vecs2.rs:27:9
+   |
+27 |         ???
+   |         ^ expected expression
 
 Explication de l'erreur / des erreurs :
-
+Nous devons, via différentes méthodes, mettre le double de ce qui a été mis (si on nous donne 1, alors on doit rendre 2) pour chaque élément de la liste
 
 résolution de l'erreur / des erreurs :
+Dans le 1er cas, il faut déréférencer element (qui est mutable) pour accéder à la valeur et non à son type
+Dans le 2eme cas, il suffisait uniquement de mettre le calcul, car un nouveau vecteur est crée avec le résultat du calcul, puis replacé dans V

@@ -1,7 +1,8 @@
 Erreur(s) :
-
+Aucune erreur
 
 Explication de l'erreur / des erreurs :
 
 
 résolution de l'erreur / des erreurs :
+Il fallait ajouter le bon use avec les bonnes parties uniquement pour avoir le résultat parfait

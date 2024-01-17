@@ -1,7 +1,63 @@
 Erreur(s) :
+error: expected identifier, found `{`
+  --> exercises/07_structs/structs3.rs:34:39
+   |
+19 | impl Package {
+   |              - while parsing this item list starting here
+...
+34 |     fn is_international(&self) -> ??? {
+   |                                       ^ expected identifier
+...
+41 | }
+   | - the item list ends here
 
+error[E0599]: no method named `is_international` found for struct `Package` in the current scope
+  --> exercises/07_structs/structs3.rs:63:25
+   |
+13 | struct Package {
+   | -------------- method `is_international` not found for this struct
+...
+63 |         assert!(package.is_international());
+   |                         ^^^^^^^^^^^^^^^^ method not found in `Package`
+
+error[E0599]: no method named `is_international` found for struct `Package` in the current scope
+  --> exercises/07_structs/structs3.rs:73:26
+   |
+13 | struct Package {
+   | -------------- method `is_international` not found for this struct
+...
+73 |         assert!(!package.is_international());
+   |                          ^^^^^^^^^^^^^^^^ method not found in `Package`
+
+error[E0599]: no method named `get_fees` found for struct `Package` in the current scope
+  --> exercises/07_structs/structs3.rs:85:28
+   |
+13 | struct Package {
+   | -------------- method `get_fees` not found for this struct
+...
+85 |         assert_eq!(package.get_fees(cents_per_gram), 4500);
+   |                            ^^^^^^^^ method not found in `Package`
+
+error[E0599]: no method named `get_fees` found for struct `Package` in the current scope
+  --> exercises/07_structs/structs3.rs:86:28
+   |
+13 | struct Package {
+   | -------------- method `get_fees` not found for this struct
+...
+86 |         assert_eq!(package.get_fees(cents_per_gram * 2), 9000);
+   |                            ^^^^^^^^ method not found in `Package`
+
+(en gros faut remplir dans les 2 fonctions ci-dessous :)
+    fn is_international(&self) -> ??? {
+        // Something goes here...
+    }
+
+    fn get_fees(&self, cents_per_gram: u32) -> ??? {
+        // Something goes here...
+    }
 
 Explication de l'erreur / des erreurs :
 
 
 résolution de l'erreur / des erreurs :
+j'ai rempli les fonctions avec les bons types de sortie et les bons arguments à passer

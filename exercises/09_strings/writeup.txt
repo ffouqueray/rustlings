@@ -1,5 +1,5 @@
 Erreur(s) :
-
+pas d'erreur en soit, on doit juste faire un choix si c'est un str ou un String
 
 Explication de l'erreur / des erreurs :
 

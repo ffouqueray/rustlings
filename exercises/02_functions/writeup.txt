@@ -1,7 +1,17 @@
 Erreur(s) :
-
+error[E0308]: mismatched types
+  --> exercises/02_functions/functions5.rs:13:24
+   |
+13 | fn square(num: i32) -> i32 {
+   |    ------              ^^^ expected `i32`, found `()`
+   |    |
+   |    implicitly returns `()` as its body has no tail or `return` expression
+14 |     num * num;
+   |              - help: remove this semicolon to return this value
 
 Explication de l'erreur / des erreurs :
-
+Actuellement, on ne dit pas clairement de retourner le carré de num dans le code, il faut donc dire clairement quoi retourner
 
 résolution de l'erreur / des erreurs :
+2 solutions :
+retirer le ; en fin de ligne 12 OU ajouter un return en début de ligne 12

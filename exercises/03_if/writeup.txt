@@ -1,7 +1,41 @@
 Erreur(s) :
+error[E0308]: `if` and `else` have incompatible types
+  --> exercises/03_if/if3.rs:15:9
+   |
+12 |       } else if animal == "snake" {
+   |  ____________-
+13 | |         3
+   | |         - expected because of this
+14 | |     } else {
+15 | |         "Unknown"
+   | |         ^^^^^^^^^ expected integer, found `&str`
+16 | |     };
+   | |_____- `if` and `else` have incompatible types
 
+
+error[E0308]: `if` and `else` have incompatible types
+  --> exercises/03_if/if3.rs:12:12
+   |
+10 |        } else if animal == "gopher" {
+   |  _____________-
+11 | |          2.0
+   | |          --- expected because of this
+12 | |      } else if animal == "snake" {
+   | | ____________^
+13 | ||         3
+14 | ||     } else {
+15 | ||         0
+16 | ||     };
+   | ||     ^
+   | ||_____|
+   |  |_____`if` and `else` have incompatible types
+   |        expected floating-point number, found integer
 
 Explication de l'erreur / des erreurs :
+erreur 1 : Le Unknown n'est pas bon car plus bas dans le code, identifier que nous déclarons est utilisé en comparaison avec un entier. Nous ne pouvons donc pas lui donner un &str
 
+erreur 2 : Il faut également retourner un entier simple, pas un float
 
 résolution de l'erreur / des erreurs :
+erreur 1 : Changer le "Unknown" par un chiffre autre que 1, 2, ou 3
+erreur 2 : Retirer le .0 du 2

@@ -1,7 +1,13 @@
 Erreur(s) :
-
+error: expected expression, found `?`
+  --> exercises/04_primitive_types/primitive_types6.rs:15:18
+   |
+15 |     let second = ???;
+   |                  ^ expected expression
 
 Explication de l'erreur / des erreurs :
-
+Nous devons déclarer second comme étant la 2eme valeur du tuple dans numbers.
 
 résolution de l'erreur / des erreurs :
+Nous déclarons second comme étant l'index 1 (un index commence à 0 en rust) de numbers
+let second = numbers.1 ;

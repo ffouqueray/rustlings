@@ -1,0 +1,14 @@
+Erreur(s) :
+error: cannot find macro `printline` in this scope
+   --> exercises/00_intro/intro2.rs:11:5
+    |
+11  |     printline!("Hello there!");
+    |     ^^^^^^^^^ help: a macro with a similar name exists: `println`
+
+error: aborting due to previous error
+
+Explication de l'erreur / des erreurs :
+printline! n'existe pas en rust, on utilise println! à la place
+
+résolution de l'erreur / des erreurs :
+j'ai remplacé printline par println

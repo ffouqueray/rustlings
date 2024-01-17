@@ -1,7 +1,42 @@
 Erreur(s) :
+error[E0382]: borrow of moved value: `data`
+  --> exercises/06_move_semantics/move_semantics6.rs:15:22
+   |
+11 |     let data = "Rust is great!".to_string();
+   |         ---- move occurs because `data` has type `String`, which does not implement the `Copy` trait
+12 |
+13 |     get_char(data);
+   |              ---- value moved here
+14 |
+15 |     string_uppercase(&data);
+   |                      ^^^^^ value borrowed here after move
+   |
+note: consider changing this parameter type in function `get_char` to borrow instead if owning the value isn't necessary
+  --> exercises/06_move_semantics/move_semantics6.rs:19:19
+   |
+19 | fn get_char(data: String) -> char {
+   |    --------       ^^^^^^ this parameter takes ownership of the value
+   |    |
+   |    in this function
+help: consider cloning the value if the performance cost is acceptable
+   |
+13 |     get_char(data.clone());
+   |                  ++++++++
 
+error[E0716]: temporary value dropped while borrowed
+  --> exercises/06_move_semantics/move_semantics6.rs:25:13
+   |
+24 | fn string_uppercase(mut data: &String) {
+   |                               - let's call the lifetime of this reference `'1`
+25 |     data = &data.to_uppercase();
+   |     --------^^^^^^^^^^^^^^^^^^^- temporary value is freed at the end of this statement
+   |     |       |
+   |     |       creates a temporary value which is freed while still in use
+   |     assignment requires that borrow lasts for `'1`
 
 Explication de l'erreur / des erreurs :
-
+erreur 1 & 2 : get_char prend un String en propriété, qui signifie qu'elle prend la propriété passé en argument mais rend data inutilisable après l'appel
+erreur 3 : elle prend normalement une référence mutable, mais ne transfert pas la propriété ni de modifier la chaine
 
 résolution de l'erreur / des erreurs :
+On corrige les propriétés avec les & en les mettant ou il faut, et en les retirant où il faut pas

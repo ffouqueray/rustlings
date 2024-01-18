@@ -1,7 +1,31 @@
 Erreur(s) :
+error: no rules expected the token `?`
+  --> exercises/17_tests/tests4.rs:33:20
+   |
+33 |         assert_eq!(???, 10); // check width
+   |                    ^ no rules expected this token in macro call
+   |
+note: while trying to match meta-variable `$left:expr`
+  --> /home/codespace/.rustup/toolchains/stable-x86_64-unknown-linux-gnu/lib/rustlib/src/rust/library/core/src/macros/mod.rs:37:6
+   |
+37 |     ($left:expr, $right:expr $(,)?) => {
+   |      ^^^^^^^^^^
 
+error: no rules expected the token `?`
+  --> exercises/17_tests/tests4.rs:34:20
+   |
+34 |         assert_eq!(???, 20); // check height
+   |                    ^ no rules expected this token in macro call
+   |
+note: while trying to match meta-variable `$left:expr`
+  --> /home/codespace/.rustup/toolchains/stable-x86_64-unknown-linux-gnu/lib/rustlib/src/rust/library/core/src/macros/mod.rs:37:6
+   |
+37 |     ($left:expr, $right:expr $(,)?) => {
+   |      ^^^^^^^^^^
+
+error: aborting due to 2 previous errors
 
 Explication de l'erreur / des erreurs :
-
+Il faut remplir ce qu'il y a dans les ??? et ajouter une condition de panique dans les fonctions avec une taille négative.
 
 résolution de l'erreur / des erreurs :

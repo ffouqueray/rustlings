@@ -1,7 +1,15 @@
 Erreur(s) :
-
+error[E0382]: use of partially moved value: `y`
+  --> exercises/12_options/options3.rs:20:5
+   |
+17 |         Some(p) => println!("Co-ordinates are {},{} ", p.x, p.y),
+   |              - value partially moved here
+...
+20 |     y; // Fix without deleting this line. 
+   |     ^ value used here after partial move
 
 Explication de l'erreur / des erreurs :
-
+Il faut utiliser une référence à la place de la variable complète, parce qu'après un déplacement il n'est plus possible de continuer à utiliser la variable 
 
 résolution de l'erreur / des erreurs :
+il faut ajouter un & à y lors du match pour envoyer la référence et non la variable complète

@@ -1,7 +1,8 @@
 Erreur(s) :
-
+Les tests ne passent pas parce que les scores ne s'enregistrent pas dans la variable et ne sont pas retournés 
 
 Explication de l'erreur / des erreurs :
 
 
 résolution de l'erreur / des erreurs :
+Il fallait remplir la variable et faire attention aux changements de scores

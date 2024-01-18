@@ -1,7 +1,33 @@
 Erreur(s) :
+error[E0106]: missing lifetime specifier
+  --> exercises/16_lifetimes/lifetimes3.rs:11:13
+   |
+11 |     author: &str,
+   |             ^ expected named lifetime parameter
+   |
+help: consider introducing a named lifetime parameter
+   |
+10 ~ struct Book<'a> { 
+11 ~     author: &'a str,
+   |
 
+error[E0106]: missing lifetime specifier
+  --> exercises/16_lifetimes/lifetimes3.rs:12:12
+   |
+12 |     title: &str,
+   |            ^ expected named lifetime parameter
+   |
+help: consider introducing a named lifetime parameter
+   |
+10 ~ struct Book<'a> { 
+11 |     author: &str,
+12 ~     title: &'a str,
+   |
+
+error: aborting due to 2 previous errors
 
 Explication de l'erreur / des erreurs :
-
+la durée de vie des deux variables n'est pas la même, il faut donc utiliser une durée de vie nommée avec 'a .
 
 résolution de l'erreur / des erreurs :
+On déclare une durée de vie nommée avec 'a et on l'utilise pour les deux variables et pour la structure.

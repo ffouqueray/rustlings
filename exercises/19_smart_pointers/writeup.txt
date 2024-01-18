@@ -2,6 +2,8 @@ Erreur(s) :
 
 
 Explication de l'erreur / des erreurs :
-
+Toutes les références n'étaient pas déclarées, donc le assert_eq! renvoyait une erreur.
+Il manque également des drops à la fin pour que le assert_eq! soit bon.
 
 résolution de l'erreur / des erreurs :
+Modification des ajouts pour Rc::clone(&sun) et ajout des drops pour que les assert_eq! soient bons.

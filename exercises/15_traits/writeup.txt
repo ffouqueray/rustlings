@@ -1,7 +1,26 @@
 Erreur(s) :
+error: expected identifier, found `)`
+  --> exercises/15_traits/traits5.rs:33:22
+   |
+33 | fn some_func(item: ??) -> bool {
+   |                      ^ expected identifier
 
+error[E0425]: cannot find value `item` in this scope
+  --> exercises/15_traits/traits5.rs:34:5
+   |
+34 |     item.some_function() && item.other_function()
+   |     ^^^^ not found in this scope
+
+error[E0425]: cannot find value `item` in this scope
+  --> exercises/15_traits/traits5.rs:34:29
+   |
+34 |     item.some_function() && item.other_function()
+   |                             ^^^^ not found in this scope
+
+error: aborting due to 3 previous errors
 
 Explication de l'erreur / des erreurs :
-
+le ?? n'est pas déclaré, il faut le remplacer par le type nécessaire
 
 résolution de l'erreur / des erreurs :
+il a fallu déclarer le type de item comme étant item: impl SomeTrait + OtherTrait, le impl sert a ne pas donner d'ordre sur le type reçu, il peut être n'importe quel type qui implémente SomeTrait et OtherTrait

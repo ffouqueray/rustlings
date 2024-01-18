@@ -1,7 +1,7 @@
 Erreur(s) :
-
+Pas d'erreur
 
 Explication de l'erreur / des erreurs :
-
+Les tests ne se font pas car les fonctions count_iterator et count_collection_iterator ne sont pas implémentées.
 
 résolution de l'erreur / des erreurs :

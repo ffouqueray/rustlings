@@ -25,7 +25,7 @@ enum Progress {
 fn count_for(map: &HashMap<String, Progress>, value: Progress) -> usize {
     let mut count = 0;
     for val in map.values() {
-        if val == &value {
+        if val == &value { 
             count += 1;
         }
     }
@@ -35,7 +35,12 @@ fn count_for(map: &HashMap<String, Progress>, value: Progress) -> usize {
 fn count_iterator(map: &HashMap<String, Progress>, value: Progress) -> usize {
     // map is a hashmap with String keys and Progress values.
     // map = { "variables1": Complete, "from_str": None, ... }
-    todo!();
+    let mut count = 0;
+    for (_, v) in map.iter() {
+        if v == &value {
+            count += 1;
+        }
+    }
 }
 
 fn count_collection_for(collection: &[HashMap<String, Progress>], value: Progress) -> usize {
@@ -54,7 +59,10 @@ fn count_collection_iterator(collection: &[HashMap<String, Progress>], value: Pr
     // collection is a slice of hashmaps.
     // collection = [{ "variables1": Complete, "from_str": None, ... },
     //     { "variables2": Complete, ... }, ... ]
-    todo!();
+    let mut acc = 0;
+    for x in collection.iter() {
+        acc += count_iterator(x, value);
+    }
 }
 
 #[cfg(test)]

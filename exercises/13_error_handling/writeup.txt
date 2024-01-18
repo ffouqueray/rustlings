@@ -1,7 +1,12 @@
 Erreur(s) :
-
+---- test::test_parse_error stdout ----
+thread 'test::test_parse_error' panicked at exercises/13_error_handling/errors6.rs:37:28:
+called `Result::unwrap()` on an `Err` value: ParseIntError { kind: InvalidDigit }
+note: run with `RUST_BACKTRACE=1` environment variable to display a backtrace
 
 Explication de l'erreur / des erreurs :
-
+la fonction parse_pos_nonzero panique si s.parse() échoue, il faut donc gérer l'erreur correctement et ressortir un format ParsePosNonzeroError
 
 résolution de l'erreur / des erreurs :
+la ligne a été modifiée pour ressortir ceci : s.parse().map_err(ParsePosNonzeroError::from_parseint)?;
+une fonction from_parseint a été ajoutée pour ressortir le bon format d'erreur

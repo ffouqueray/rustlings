@@ -1,7 +1,15 @@
 Erreur(s) :
-
+error[E0308]: mismatched types
+  --> exercises/14_generics/generics2.rs:32:33
+   |
+32 |         assert_eq!(Wrapper::new("Foo").value, "Foo");
+   |                    ------------ ^^^^^ expected `u32`, found `&str`
+   |                    |
+   |                    arguments to this function are incorrect
+   |
 
 Explication de l'erreur / des erreurs :
-
+Le programme nous dit qu'actuellement Wrapper ne peut renvoyer que des u32, nous devons donc lui dire que nous renverrons n'importe quel type de valeur.
 
 résolution de l'erreur / des erreurs :
+Il faut ajouter des <T> car la fonction est maintenant capable de gérer chaque type indépendamment et le traitera correctement

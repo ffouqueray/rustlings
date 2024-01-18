@@ -1,7 +1,13 @@
 Erreur(s) :
-
+error[E0277]: cannot divide `f64` by `usize`
+  --> exercises/23_conversions/using_as.rs:17:11
+   |
+17 |     total / values.len()
+   |           ^ no implementation for `f64 / usize`
+   |
 
 Explication de l'erreur / des erreurs :
-
+Il n'est pas précisé qu'est-ce qui est f64. Nous devons donc le préciser en utilisant la méthode as.
 
 résolution de l'erreur / des erreurs :
+ajout de "as f64" à la dernière ligne de la fonction average.
